@@ -11,7 +11,7 @@ public class FilmeAux {
     private Random random = new Random();
 
     public Filme[] gerarFilmes(int quant) {
-        Filme[] filmes = {};
+        Filme[] filmes = new Filme[quant];
 
         for (int i = 0; i < quant; i++) {
             filmes[i] = this.gerarFilme();
