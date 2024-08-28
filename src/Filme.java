@@ -1,9 +1,9 @@
 public class Filme implements Comparable<Filme> {
     private String nome;
     private int ano;
-    private float nota;
+    private int nota;
 
-    public Filme(String nome, int ano, float nota) {
+    public Filme(String nome, int ano, int nota) {
         this.nome = nome;
         this.ano = ano;
         this.nota = nota;
@@ -12,7 +12,7 @@ public class Filme implements Comparable<Filme> {
     @Override
     public int compareTo(Filme filme) {
       if (this.nota != filme.nota) {
-        return Float.compare(filme.nota, this.nota);
+        return Integer.compare(filme.nota, this.nota);
       } else if (this.ano != filme.ano) {
         return Integer.compare(this.ano, filme.ano);
       } else {
@@ -28,7 +28,7 @@ public class Filme implements Comparable<Filme> {
       return nome;
     }
 
-    public float getNota() {
+    public int getNota() {
       return nota;
     }
 

@@ -23,13 +23,13 @@ public class FilmeAux {
     private Filme gerarFilme() {
         String nome = this.gerarNome();
         int ano = this.gerarAno();
-        float nota = this.gerarNota();
+        int nota = this.gerarNota();
 
         return new Filme(nome, ano, nota);
     }
 
-    private float gerarNota() {
-        return Math.round(this.random.nextFloat(5) * 10) / 10.0f;
+    private int gerarNota() {
+        return this.random.nextInt(6);
     }
 
     private int gerarAno() {
