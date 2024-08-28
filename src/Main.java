@@ -10,12 +10,11 @@ public class Main {
         }
 
         System.out.println();
-        sort.insertionSort(filmes);;
+        // sort.insertionSort(filmes);
+        sort.mergeSort(filmes);
 
         for (Filme filme : filmes) {
             System.out.println(filme.toString());
         }
-
-        
     }
 }
