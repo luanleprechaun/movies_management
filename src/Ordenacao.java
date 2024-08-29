@@ -65,18 +65,39 @@ public class Ordenacao {
         }
     }
 
-    public void quickSort(Filme[] filmes) {}
+    public void quickSort(Filme[] filmes) {
+        this.quickSortAux(filmes, 0, filmes.length - 1);
+    }
 
     private void quickSortAux(Filme[] filmes, int ini, int fim) {
         if (ini < fim) {
-            int pivo = partition(filmes, ini, fim);
+            int pivo = this.quickSortPartition(filmes, ini, fim);
 
             quickSortAux(filmes, ini, pivo - 1);
             quickSortAux(filmes, pivo + 1, fim);
         }
     }
 
-    private int partition(Filme[] filmes, int ini, int fim) {
-        return 1;
+    private int quickSortPartition(Filme[] filmes, int ini, int fim) {
+        Filme pivo = filmes[fim];
+        int i = ini - 1;
+
+        for (int j = ini; j < fim; j++) {
+            if (filmes[j].compareTo(pivo) <= 0) {
+                i++;
+
+                this.quickSortSwap(filmes, i, j);
+            }
+        }
+
+        this.quickSortSwap(filmes, i + 1, fim);
+
+        return i + 1;
+    }
+
+    private void quickSortSwap(Filme[] filmes, int i, int j) {
+        Filme temp = filmes[i];
+        filmes[i] = filmes[j];
+        filmes[j] = temp;
     }
 }
