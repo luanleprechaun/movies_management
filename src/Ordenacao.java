@@ -12,58 +12,62 @@ public class Ordenacao {
         }
     }  
 
-    public void mergeSort(Filme[] filmes) {
-        if (filmes.length == 1) {
-            return;
-        } else {
-            int meio = filmes.length / 2;
-            Filme[] filmesEsquerda = new Filme[meio];
-            Filme[] filmesDireita = new Filme[filmes.length - meio];
+    public void mergeSort(Filme[] filmes){
+        mergeSortAux(filmes, 0, filmes.length - 1);
+    }
 
-            for (int i = 0; i < meio; i++) {
-                filmesEsquerda[i] = filmes[i];
-            }
+    public void mergeSortAux(Filme[] filmes, int ini, int fim){
+        if (ini < fim) {
+            int meio = ini + ((fim - ini)/2);
 
-            for (int i = meio; i < filmes.length; i++) {
-                filmesDireita[i - meio] = filmes[i];
-            }
+            mergeSortAux(filmes, ini, meio);
+            mergeSortAux(filmes, meio + 1, fim);
+            merge(filmes, ini, meio, fim);
 
-            mergeSort(filmesEsquerda);
-            mergeSort(filmesDireita);
-
-            mergeSortAux(filmes, filmesEsquerda, filmesDireita);
         }
     }
 
-    private void mergeSortAux(Filme[] filmes, Filme[] filmesEsquerda, Filme[] filmesDireita) {
-        int iEsquerda = 0, iDireita = 0, iResult = 0;
+    public void merge(Filme[] filmes, int ini, int meio, int fim){
+        int tamEsq = meio - ini + 1;
+        int tamDir = fim - meio;
 
-        while (iEsquerda < filmesEsquerda.length && iDireita < filmesDireita.length) {
-            if (filmesEsquerda[iEsquerda].compareTo(filmesDireita[iDireita]) <= 0) {
-                filmes[iResult] = filmesEsquerda[iEsquerda];
-                iEsquerda++;
-            } else {
-                filmes[iResult] = filmesDireita[iDireita];
-                iDireita++;
+        Filme[] vetEsq = new Filme[tamEsq];
+        Filme[] vetDir = new Filme[tamDir];
+
+        for (int i = 0; i < tamEsq; i++) {
+            vetEsq[i] = filmes[ini + i];
+        }
+        
+        for (int j = 0; j < tamDir; j++) {
+            vetDir[j] = filmes[meio + 1 + j];
+        }
+
+        int e = 0, d = 0, k = ini;
+
+        while (e < tamEsq && d < tamDir) {
+            if (vetEsq[e].compareTo(vetDir[d]) <= 0) {
+                filmes[k] = vetEsq[e];
+                e++;
+            }else{
+                filmes[k] = vetDir[d];
+                d++;
             }
-
-            iResult++;
+            k++;
         }
 
-        while (iEsquerda < filmesEsquerda.length) {
-            filmes[iResult] = filmesEsquerda[iEsquerda];
-
-            iEsquerda++;
-            iResult++;
+        while (e < tamEsq) {
+            filmes[k] = vetEsq[e];
+            e++;
+            k++;
         }
 
-        while (iDireita < filmesDireita.length) {
-            filmes[iResult] = filmesDireita[iDireita];
-
-            iDireita++;
-            iResult++;
+        while (d < tamDir) {
+            filmes[k] = vetDir[d];
+            d++;
+            k++;
         }
     }
+
 
     public void quickSort(Filme[] filmes) {
         this.quickSortAux(filmes, 0, filmes.length - 1);
