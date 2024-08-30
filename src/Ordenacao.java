@@ -107,21 +107,31 @@ public class Ordenacao {
 
     public void countingSort(Filme[] filmes){
         int k = 6;
+        int tam = filmes.length;
 
         int[] C = new int[k];
-        Filme[] B = new Filme[filmes.length];
+        Filme[] B = new Filme[tam];
 
-        for(int i = 0; i < filmes.length; i++){
-            C[filmes[i].getNota()] += 1;
+        for(int i = 0; i < tam; i++){
+            C[filmes[i].getNota()]++;
         }
 
-        for(int i = 1; i < C.length; i++){
+        for(int i = 1; i < k; i++){
             C[i] = C[i] + C[i-1];
         }
 
-        for(int i = filmes.length - 1; i >= 0; i--){
+        for(int i = tam - 1; i >= 0; i--){
             B[C[filmes[i].getNota()] - 1] = filmes[i];
-            C[filmes[i].getNota()] -= 1;
+            C[filmes[i].getNota()]--;
         }
+        System.out.println();
+        for (int i = 0; i< tam; i++) {
+            System.out.println(B[i].toString());
+        }
+        System.out.println();
+        for (int i = 0; i< tam; i++) {
+            filmes[i] = B[tam - 1 - i];
+        }
+
     }
 }
