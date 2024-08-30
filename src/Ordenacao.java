@@ -104,4 +104,24 @@ public class Ordenacao {
         filmes[i] = filmes[j];
         filmes[j] = temp;
     }
+
+    public void countingSort(Filme[] filmes){
+        int k = 6;
+
+        int[] C = new int[k];
+        Filme[] B = new Filme[filmes.length];
+
+        for(int i = 0; i < filmes.length; i++){
+            C[filmes[i].getNota()] += 1;
+        }
+
+        for(int i = 1; i < C.length; i++){
+            C[i] = C[i] + C[i-1];
+        }
+
+        for(int i = filmes.length - 1; i >= 0; i--){
+            B[C[filmes[i].getNota()] - 1] = filmes[i];
+            C[filmes[i].getNota()] -= 1;
+        }
+    }
 }

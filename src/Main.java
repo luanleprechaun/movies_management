@@ -12,7 +12,8 @@ public class Main {
         System.out.println();
         // sort.insertionSort(filmes);
         // sort.mergeSort(filmes);
-        sort.mergeSort(filmes);
+        // sort.mergeSort(filmes);
+        sort.countingSort(filmes);
 
         for (Filme filme : filmes) {
             System.out.println(filme.toString());
