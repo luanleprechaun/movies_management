@@ -1,4 +1,5 @@
-public class Ordenacao {
+public class Ordenacao implements Ordenacao_IF{
+    @Override
     public void insertionSort(Filme[] filmes){
         for (int j = 1; j < filmes.length; j++) {
             Filme aux = filmes[j];
@@ -12,6 +13,7 @@ public class Ordenacao {
         }
     }  
 
+    @Override
     public void mergeSort(Filme[] filmes){
         mergeSortAux(filmes, 0, filmes.length - 1);
     }
@@ -69,6 +71,7 @@ public class Ordenacao {
     }
 
 
+    @Override
     public void quickSort(Filme[] filmes) {
         this.quickSortAux(filmes, 0, filmes.length - 1);
     }
@@ -105,6 +108,7 @@ public class Ordenacao {
         filmes[j] = temp;
     }
 
+    @Override
     public void countingSort(Filme[] filmes){
         int k = 6;
         int tam = filmes.length;
