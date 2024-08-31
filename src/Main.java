@@ -13,15 +13,19 @@ public class Main {
             }
             
             System.out.println();
+            System.out.println(busca.checaVetorOrdenado(filmes));
             // sort.insertionSort(filmes);
-            sort.mergeSort(filmes);
             // sort.mergeSort(filmes);
+            sort.mergeSort(filmes);
             // sort.countingSort(filmes);
+
+            System.out.println(busca.checaVetorOrdenado(filmes));
 
             // System.out.println(busca.buscaLinear_iterativa(filmes, 4));
             // System.out.println(busca.buscaLinear_recursiva(filmes, 4));
             // System.out.println(busca.buscaBinaria_iterativa(filmes, 4));
-            System.out.println(busca.buscaBinaria_recursiva(filmes, 4));
+            // System.out.println(busca.buscaBinaria_recursiva(filmes, 4));
+            // System.out.println(busca.buscaLinear_iterativa_duasPontas(filmes, 1));
 
             System.out.println();
         for (Filme filme : filmes) {
