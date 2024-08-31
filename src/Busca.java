@@ -77,7 +77,6 @@ public class Busca implements Busca_IF {
         if (nota < 0)  {
             throw new Exception("Nota negativa, digite uma nota valida.");
         } 
-
         return buscaBinaria_recursivaAux(filmes, 0, filmes.length, nota);
     }
 
@@ -87,7 +86,9 @@ public class Busca implements Busca_IF {
         if (nota == filmes[meio].getNota()) {
             return filmes[meio];
         }
-
+        if (ini == fim) {
+            return null;
+        }
         if (nota < filmes[meio].getNota()) {
             return buscaBinaria_recursivaAux(filmes, meio + 1, fim, nota);
         }
