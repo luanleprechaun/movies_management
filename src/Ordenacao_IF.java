@@ -13,7 +13,7 @@ public interface Ordenacao_IF {
 
   public void quickSort(Filme[] filmes); // Versão do slide
 
-  // public void quickSortRandom(Filme[] filmes); // Versão do slide + Shuffle (pivô aleatório)
+  public void quickSortRandom(Filme[] filmes); // Versão do slide + Shuffle (pivô aleatório)
 
   public void mergeSort(Filme[] filmes);
 

@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Ordenacao implements Ordenacao_IF{
     @Override
     public void insertionSort(Filme[] filmes){
@@ -70,6 +72,22 @@ public class Ordenacao implements Ordenacao_IF{
         }
     }
 
+    @Override
+    public void quickSortRandom(Filme[] filmes) {
+        this.quickSortRandomAux(filmes, 0, filmes.length - 1);
+    }
+
+    private void quickSortRandomAux(Filme[] filmes, int ini, int fim) {
+        if (ini < fim) {
+            int pivoRandom = new Random().nextInt(fim - ini) + 1 + ini;
+            this.quickSortSwap(filmes, ini, pivoRandom);
+
+            int pivo = this.quickSortPartition(filmes, ini, fim);
+
+            quickSortAux(filmes, ini, pivo - 1);
+            quickSortAux(filmes, pivo + 1, fim);
+        }
+    }
 
     @Override
     public void quickSort(Filme[] filmes) {
@@ -86,20 +104,20 @@ public class Ordenacao implements Ordenacao_IF{
     }
 
     private int quickSortPartition(Filme[] filmes, int ini, int fim) {
-        Filme pivo = filmes[fim];
-        int i = ini - 1;
+        Filme pivo = filmes[ini];
+        int i = ini + 1;
 
-        for (int j = ini; j < fim; j++) {
+        for (int j = i; j <= fim; j++) {
             if (filmes[j].compareTo(pivo) <= 0) {
-                i++;
-
                 this.quickSortSwap(filmes, i, j);
+
+                i++;
             }
         }
 
-        this.quickSortSwap(filmes, i + 1, fim);
+        this.quickSortSwap(filmes, ini, i - 1);
 
-        return i + 1;
+        return i - 1;
     }
 
     private void quickSortSwap(Filme[] filmes, int i, int j) {
