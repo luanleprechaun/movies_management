@@ -11,6 +11,7 @@ public class Main {
         for (Filme filme : filmes) {
                 System.out.println(filme.toString());
             }
+        System.out.println(busca.checaVetorOrdenado(filmes));
             
             System.out.println();
             // sort.insertionSort(filmes);
@@ -27,5 +28,6 @@ public class Main {
         for (Filme filme : filmes) {
             System.out.println(filme.toString());
         }
+        System.out.println(busca.checaVetorOrdenado(filmes));
     }
 }
