@@ -18,7 +18,7 @@ public class Ordenacao implements Ordenacao_IF{
         mergeSortAux(filmes, 0, filmes.length - 1);
     }
 
-    public void mergeSortAux(Filme[] filmes, int ini, int fim){
+    private  void mergeSortAux(Filme[] filmes, int ini, int fim){
         if (ini < fim) {
             int meio = ini + ((fim - ini)/2);
 
@@ -29,7 +29,7 @@ public class Ordenacao implements Ordenacao_IF{
         }
     }
 
-    public void merge(Filme[] filmes, int ini, int meio, int fim){
+    private void merge(Filme[] filmes, int ini, int meio, int fim){
         int tamEsq = meio - ini + 1;
         int tamDir = fim - meio;
 
@@ -128,11 +128,7 @@ public class Ordenacao implements Ordenacao_IF{
             B[C[filmes[i].getNota()] - 1] = filmes[i];
             C[filmes[i].getNota()]--;
         }
-        System.out.println();
-        for (int i = 0; i< tam; i++) {
-            System.out.println(B[i].toString());
-        }
-        System.out.println();
+
         for (int i = 0; i< tam; i++) {
             filmes[i] = B[tam - 1 - i];
         }
