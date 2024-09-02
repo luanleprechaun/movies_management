@@ -13,7 +13,7 @@ public class Main {
         System.out.println("8 - Quick sort random");
         System.out.println("9 - Counting sort");
         System.out.println("10 - Busca linear iterativa");
-        System.out.println("11 - Busca linear rescursiva");
+        System.out.println("11 - Busca linear recursiva");
         System.out.println("12 - Busca binaria iterativa");
         System.out.println("13 - Busca binaria recursiva");
         System.out.println("14 - Busca linear iterativa duas pontas");
