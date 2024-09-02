@@ -1,12 +1,12 @@
 import java.util.Random;
 
 public class FilmeAux {
-    private final char[] consoantes = {
+    private static final char[] consoantes = {
         'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 
         'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z'
     };
 
-    private final char[] vogais = {'a', 'e', 'i', 'o', 'u'};
+    private static final char[] vogais = {'a', 'e', 'i', 'o', 'u'};
 
     private Random random = new Random();
 

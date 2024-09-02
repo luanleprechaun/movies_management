@@ -87,7 +87,7 @@ public class Main {
                         tempo = System.nanoTime();
                         sort.insertionSort(filmes);
 
-                        System.out.print("/n Tempo de execucao: " + (System.nanoTime() - tempo) / 1000000000.0);
+                        System.out.println("Tempo de execucao: " + (System.nanoTime() - tempo) / 1000000000.0);
                         break;
                     case 6:
                         tempo = System.nanoTime();
