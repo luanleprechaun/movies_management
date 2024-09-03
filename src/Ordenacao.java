@@ -2,6 +2,17 @@ import java.util.Random;
 
 public class Ordenacao implements Ordenacao_IF{
     @Override
+    public boolean checaVetorOrdenado(Filme[] filmes) {
+        for (int i = 0, j = i + 1; j < filmes.length; i++, j++) {
+            if (filmes[i].compareTo(filmes[j]) > 0) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    @Override
     public void insertionSort(Filme[] filmes){
         for (int j = 1; j < filmes.length; j++) {
             Filme aux = filmes[j];

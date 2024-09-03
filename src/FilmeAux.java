@@ -35,7 +35,7 @@ public class FilmeAux {
         int ano = this.gerarAno();
         int nota = this.gerarNota();
 
-        return new Filme(nome, ano, nota);
+        return new Filme(nome, nota, ano);
     }
 
     private int gerarNota() {

@@ -3,10 +3,10 @@ public class Filme implements Filme_IF {
   private int ano;
   private int nota;
   
-  public Filme(String nome, int ano, int nota) {
+  public Filme(String nome, int nota, int ano) {
       this.nome = nome;
-      this.ano = ano;
       this.nota = nota;
+      this.ano = ano;
   }
   
     @Override
@@ -52,8 +52,6 @@ public class Filme implements Filme_IF {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + 
-               " Ano: " + ano + 
-               " Nota: " + nota;
+        return nome + " (" + ano + ") [" + nota + "]";
     }
 }

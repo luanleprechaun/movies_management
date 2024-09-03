@@ -28,7 +28,7 @@ public class Main {
         }
             
         System.out.print("\nVetor ordenado? ");
-        System.out.println(busca.checaVetorOrdenado(filmes));
+        System.out.println(sort.checaVetorOrdenado(filmes));
 
         System.out.print("\nFilmes buscado -> ");
         try {

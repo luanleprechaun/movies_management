@@ -1,4 +1,5 @@
 public interface Ordenacao_IF {
+  public boolean checaVetorOrdenado(Filme[] filmes);
   public void insertionSort(Filme[] filmes);
   public void quickSort(Filme[] filmes);
   public void quickSortRandom(Filme[] filmes);
