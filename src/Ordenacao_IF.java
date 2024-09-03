@@ -1,22 +1,7 @@
 public interface Ordenacao_IF {
-
-  // public boolean checaVetorOrdenado(Filme[] filmes);
-
-  /* --------------------------------------------- */
-  /* Só é necessário implementar apenas UM desses */
-  // public void bubbleSort(Filme[] filmes);
-
-  // public void selectionSort(Filme[] filmes);
-
   public void insertionSort(Filme[] filmes);
-  /* --------------------------------------------- */
-
-  public void quickSort(Filme[] filmes); // Versão do slide
-
-  public void quickSortRandom(Filme[] filmes); // Versão do slide + Shuffle (pivô aleatório)
-
+  public void quickSort(Filme[] filmes);
+  public void quickSortRandom(Filme[] filmes);
   public void mergeSort(Filme[] filmes);
-
   public void countingSort(Filme[] filmes);
-
 }

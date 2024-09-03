@@ -1,5 +1,4 @@
 public class Busca implements Busca_IF {
-
     @Override
     public boolean checaVetorOrdenado(Filme[] filmes) {
         for (int i = 0, j = i + 1; j < filmes.length; i++, j++) {

@@ -1,4 +1,3 @@
-
 public class Main {
     public static void main(String[] args) throws Exception {
         Ordenacao sort = new Ordenacao();
@@ -47,6 +46,5 @@ public class Main {
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
-            
     }
 }
