@@ -1,7 +1,13 @@
+package atividade01.test;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import atividade01.interfaces.Ordenacao_IF;
+import atividade01.models.Filme;
+import atividade01.models.Ordenacao;
 
 public class Ordenacao_Test {
 

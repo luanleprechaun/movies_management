@@ -1,3 +1,5 @@
+package atividade01.interfaces;
+
 public interface Filme_IF extends Comparable<Filme_IF> {
   public String getNome();
   public void setNome(String nome);

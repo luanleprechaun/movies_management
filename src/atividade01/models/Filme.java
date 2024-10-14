@@ -1,3 +1,7 @@
+package atividade01.models;
+
+import atividade01.interfaces.Filme_IF;
+
 public class Filme implements Filme_IF {
   private String nome;
   private int ano;

@@ -1,3 +1,7 @@
+package atividade01.interfaces;
+
+import atividade01.models.Filme;
+
 public interface Busca_IF {
 	boolean checaVetorOrdenado(Filme[] filmes);
 	Filme buscaLinear_iterativa(Filme[] filmes, int nota) throws Exception;

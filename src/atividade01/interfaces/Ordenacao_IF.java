@@ -1,3 +1,7 @@
+package atividade01.interfaces;
+
+import atividade01.models.Filme;
+
 public interface Ordenacao_IF {
   public boolean checaVetorOrdenado(Filme[] filmes);
   public void insertionSort(Filme[] filmes);

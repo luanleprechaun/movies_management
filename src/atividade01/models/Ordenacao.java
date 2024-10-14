@@ -1,6 +1,10 @@
+package atividade01.models;
+
 import java.util.Random;
 
-public class Ordenacao implements Ordenacao_IF{
+import atividade01.interfaces.Ordenacao_IF;
+
+public class Ordenacao implements Ordenacao_IF {
     @Override
     public boolean checaVetorOrdenado(Filme[] filmes) {
         for (int i = 0, j = i + 1; j < filmes.length; i++, j++) {
@@ -95,8 +99,8 @@ public class Ordenacao implements Ordenacao_IF{
 
             int pivo = this.quickSortPartition(filmes, ini, fim);
 
-            quickSortAux(filmes, ini, pivo - 1);
-            quickSortAux(filmes, pivo + 1, fim);
+            quickSortRandomAux(filmes, ini, pivo - 1);
+            quickSortRandomAux(filmes, pivo + 1, fim);
         }
     }
 

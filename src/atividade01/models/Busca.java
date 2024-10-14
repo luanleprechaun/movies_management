@@ -1,3 +1,7 @@
+package atividade01.models;
+
+import atividade01.interfaces.Busca_IF;
+
 public class Busca implements Busca_IF {
     @Override
     public boolean checaVetorOrdenado(Filme[] filmes) {

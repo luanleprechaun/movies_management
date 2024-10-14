@@ -1,4 +1,8 @@
+package atividade01.utils;
+
 import java.util.Random;
+
+import atividade01.models.Filme;
 
 public class FilmeAux {
     private static final char[] consoantes = {

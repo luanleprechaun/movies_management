@@ -1,3 +1,10 @@
+package atividade01;
+
+import atividade01.models.Busca;
+import atividade01.models.Filme;
+import atividade01.models.Ordenacao;
+import atividade01.utils.FilmeAux;
+
 public class Main {
     public static void main(String[] args) throws Exception {
         Ordenacao sort = new Ordenacao();
@@ -5,28 +12,28 @@ public class Main {
         Filme[] filmes = new FilmeAux().gerarFilmes(10);
         long tempo;
 
-        System.out.println("\n     ANTES DA ORDENACAO:");
-        for (Filme filme : filmes) {
-            System.out.println(filme.toString());
-        }
+        // System.out.println("\n     ANTES DA ORDENACAO:");
+        // for (Filme filme : filmes) {
+        //     System.out.println(filme.toString());
+        // }
 
         System.out.println();
         tempo = System.nanoTime();
 
-        sort.insertionSort(filmes);
+        // sort.insertionSort(filmes);
         // sort.mergeSort(filmes);
         // sort.quickSort(filmes);
-        // sort.quickSortRandom(filmes);
+        sort.quickSortRandom(filmes);
+        sort.quickSortRandom(filmes);
         // sort.countingSort(filmes);
 
         System.out.println("Tempo de execucao (SORT): " + (System.nanoTime() - tempo) / 1000000000.0);
             
-        System.out.println("\n     APOS A ORDENACAO:");
-        for (Filme filme : filmes) {
-            System.out.println(filme.toString());
-                
-        }
-            
+        // System.out.println("\n     APOS A ORDENACAO:");
+        // for (Filme filme : filmes) {
+        //     System.out.println(filme.toString());
+        // }
+
         System.out.print("\nVetor ordenado? ");
         System.out.println(sort.checaVetorOrdenado(filmes));
 

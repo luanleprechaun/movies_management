@@ -1,9 +1,15 @@
+package atividade01.test;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import atividade01.interfaces.Busca_IF;
+import atividade01.models.Busca;
+import atividade01.models.Filme;
 
 public class Busca_Test {
 
